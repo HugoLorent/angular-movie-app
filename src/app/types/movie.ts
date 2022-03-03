@@ -1,3 +1,4 @@
+import { Comment } from './comment';
 import { Genre } from './genre';
 import { Language } from './language';
 
@@ -11,4 +12,5 @@ export class Movie {
   release_date: string;
   spoken_languages: Language[];
   genres: Genre[];
+  comments?: Comment[];
 }

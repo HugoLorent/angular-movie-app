@@ -15,7 +15,7 @@ export class MovieDetailsComponent implements OnInit {
 
   constructor(
     private movieServie: MovieService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
