@@ -15,6 +15,10 @@
       <ul class="genres">
         <li *ngFor="let genre of genres">{{ genre.name }}</li>
       </ul>
+      <ul class="genres" *ngFor="let comment of comments; let i = index ">Comment n° {{ i + 1 }} :
+        <li> Rating : {{ comment.rating }}</li>
+        <li> Comment : {{ comment.text }}</li>
+      </ul>
     </div>
   </div>
 </div>

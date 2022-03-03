@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../services/movie.service';
+import { Comment } from '../types/comment';
 import { Genre } from '../types/genre';
 import { Movie } from '../types/movie';
 
@@ -12,6 +13,7 @@ import { Movie } from '../types/movie';
 export class MovieDetailsComponent implements OnInit {
   movie: Movie;
   genres: Genre[];
+  comments: Comment[];
 
   constructor(
     private movieServie: MovieService,
@@ -24,6 +26,7 @@ export class MovieDetailsComponent implements OnInit {
       next: (movie) => {
         this.movie = movie;
         this.genres = this.movie.genres;
+        this.comments = this.movie.comments;
         console.log(movie);
       },
       error: (error) => {
