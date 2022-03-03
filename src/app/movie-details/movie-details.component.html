@@ -1,13 +1,20 @@
-<main>
-    <div class="container">
-      <article class="details" *ngIf="movie">
-        <h3>{{ movie.title }}</h3>
-        <a routerLink="/">Retour à l&apos;accueil</a>
-        <div class="details-body">
-          <img [src]="movie.poster_path" />
-        </div>
-        <div>
-        </div>
-      </article>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <img class="details-img" [src]="movie.poster_path" />
     </div>
-  </main>
+    <div class="col-xs-12 col-sm-8">
+      <h2>{{ movie.title }}</h2>
+      <h3>{{ movie.tagline }}</h3>
+
+      <p class="meta-wrap">
+        <span class="rating">Rating : {{ movie.vote_average }}</span> <br />
+        <span class="meta">{{ movie.spoken_languages[0].name }} / {{ movie.runtime }} /{{ movie.release_date }}</span>
+      </p>
+
+      <ul class="genres">
+        <li *ngFor="let genre of genres">{{ genre.name }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
