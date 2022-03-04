@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Movie } from '../types/movie';
 import { HttpClient } from '@angular/common/http';
 import { Comment } from '../types/comment';
+import { Genre } from '../types/genre';
 
 @Injectable({
   providedIn: 'root',
@@ -10,12 +11,17 @@ import { Comment } from '../types/comment';
 export class MovieService {
   serverUrl = 'https://movie-api.benoithubert.me';
   moviesPath = '/movies';
+  genrePath = '/genres';
   commentPath = '/comments';
 
   constructor(private http: HttpClient) {}
 
-  getAllMovies(): Observable<Movie[]> {
+  getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.serverUrl}${this.moviesPath}`);
+  }
+
+  getGenres(): Observable<Genre[]> {
+    return this.http.get<Genre[]>(`${this.serverUrl}${this.genrePath}`);
   }
 
   getMovie(id: number): Observable<Movie> {
