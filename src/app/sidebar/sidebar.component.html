@@ -6,6 +6,8 @@
 </label>
 <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
-        <li *ngFor="let genre of genres"><a href="#" target="_blank" >{{ genre.name }}</a></li>
+        <li *ngFor="let genre of genres">
+            <a target="_blank" href="#" routerLink="movies/{{ genre.name }}">{{ genre.name }}</a>
+        </li>
     </ul>
 </div>

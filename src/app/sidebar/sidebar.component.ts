@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { MovieService } from '../services/movie.service';
 import { Genre } from '../types/genre';
 
@@ -10,7 +11,7 @@ import { Genre } from '../types/genre';
 export class SidebarComponent implements OnInit {
   genres: Genre[];
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService, private router: Router) {}
 
   ngOnInit(): void {
     this.movieService.getGenres().subscribe({
